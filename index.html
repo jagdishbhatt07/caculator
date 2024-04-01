@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="intro.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main1">
+            <h1>CALCULATOR</h1>
+            <input class="output" type="text" placeholder="0">
+            <div class="min">
+                <div class="button">7</div>
+                <div class="button">8</div>
+                <div class="button">9</div>
+                <div class="button">+</div>
+                <div class="button">4</div>
+                <div class="button">5</div>
+                <div class="button">6</div>
+                <div class="button">-</div>
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+                <div class="button">*</div>
+                <div class="button">A/C</div>
+                <div class="button">0</div>
+                <div class="button">=</div>
+                <div class="button">/</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let display = document.querySelector('.output');
+        let buttons = document.querySelectorAll('.button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.textContent === 'A/C') {
+                    display.value = '';
+                } else if (button.textContent === '=') {
+                    try {
+                        display.value = eval(display.value);
+                    } catch (error) {
+                        display.value = 'Error';
+                    }
+                } else {
+                    display.value += button.textContent;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>
